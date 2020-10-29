@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<style>
+</style>
+<body>
+	
+					<form  th:action = "@{/login}" th:object="${admin}" method = "post">
+						
+							<label>Admin Username</label>
+							<input type="text"placeholder="" name = "code" required>
+
+						</div>
+						
+							<label for="exampleInputPassword1" class="text-uppercase">Password</label>
+							<input type="password" placeholder="" name = "password" required>
+						</div>
+                       
+
+						<div>
+							<button type="submit">Submit</button>
+						</div>
+
+					</form>
+                 <a th:href="@{registration}">Register Now</a>
+				</div>
+			
+			</div>
+			</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8" />
+<title>Hospital Management - Add a new Doctor</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+  
+        
+           <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../side-bar.css">
+	<link rel="stylesheet" href="../side-bar.css">
+    
+</head>
+<style>
+        #navbar{
+    top:0%;
+	left:15%;
+    background-color: #02BFCD;
+    width:85%;
+    height:10%;
+   position:fixed;
+   z-index: 1;
+   overflow:visible;
+    color:white;
+    font-family: Geneva;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 12%;
+    font-size:20px; 
+    padding:0.5%;
+}
+#box1{
+margin-top:4%;
+margin-left:17%;
+width:84%;
+height:100%;
+padding:2%;
+}
+td{
+white-space: nowrap;
+overflow: scroll;
+
+}
+.btn1{
+width:630px;
+}
+​.btn-info{
+  display: inline-block;
+   background-color: #02BFCD;
+}
+.dropdown-primary{
+ background-color: #02BFCD;
+}
+.nonactive{
+background-color:white;
+color:#02BFCD;'
+}
+                                                                                                         
+.a1:hover, .a1:active {
+  background-color: red;
+    text-decoration: none;
+}
+</style>
+<body>
+ <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
+ <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <!-- sidebar-brand  -->
+                <div class="sidebar-item sidebar-brand">
+                    <a href="#">Admin Bar</a>
+                </div>
+                <!-- sidebar-header  -->
+                <div class="sidebar-item sidebar-header d-flex flex-nowrap">
+                    <div class="user-pic">
+                        <img class="img-responsive img-rounded" src="" alt="User picture">
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Admin
+                            <strong>Panel</strong>
+                        </span>
+                        <span class="user-role">Administrator</span>
+                        <span class="user-status">
+                            <i class="fa fa-circle"></i>
+                            <span>Online</span>
+                        </span>
+                    </div>
+                </div>
+                <!-- sidebar-search  -->
+                <div class="sidebar-item sidebar-search">
+                    <div>
+                        <div class="input-group">
+                            <input type="text" class="form-control search-menu" placeholder="Search...">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- sidebar-menu  -->
+                <div class=" sidebar-item sidebar-menu">
+                    <ul>
+                        <li class="header-menu">
+                            <span>General</span>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="adminPage.html">
+                                <i class="fa fa-tachometer-alt"></i>
+                                <span class="menu-text">Dashboard</span>
+                       
+                            </a>
+                        
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href = "/getAllDoctors">
+                                <i class="fa fa-user-md"></i>Doctor</a>
+                      
+                        </li>
+						   <li class="sidebar-dropdown">
+                            <a href="/getAllLaboratorist">
+                                <i class="fa fa-vials"></i>
+                                <span class="menu-text">Laboratorist</span>
+                            </a>
+                            
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="#">
+                                <i class="fa fa-user-nurse"></i>
+                                <span class="menu-text">Nurse</span>
+                            </a>
+                            
+                        </li>
+						
+						 <li class="sidebar-dropdown">
+                            <a href="/getAllRecepsionist">
+                               <i class="fa fa-concierge-bell"></i>
+                                <span class="menu-text">Recepsionist</span>
+                            </a>
+                            
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="/getAllInDoorPatient">
+                               <i class="fa fa-procedures"></i>
+                                <span class="menu-text">In Patient</span>
+                            </a>
+                            
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="/getAllOutDoorPatient">
+                            <i class="fa fa-user-injured"></i>
+                                <span class="menu-text">OutPatient</span>
+                            </a>
+                           
+                        </li>
+						 <li class="sidebar-dropdown">
+                            <a href="GetAllMediactions">
+                            <i class="fa fa-prescription-bottle-alt"></i>
+                                <span class="menu-text">Medicines</span>
+                            </a>
+                           
+                        </li>
+						  <li>
+                            <a href="/getAllAppointments">
+                                <i class="fa fa-calendar"></i>
+                               <span class="menu-text">Appointments</span>
+                       
+                            </a>
+                        </li>
+						
+						  <li>
+                            <a href="/getAllOperations">
+                                <i class="fa fa-calendar"></i>
+                               <span class="menu-text">Operations</span>
+                       
+                            </a>
+                        </li>
+                        
+                          <li>
+                            <a href="/getAllDepartaments">
+                                <i class="fa fa-calendar"></i>
+                               <span class="menu-text">Departaments</span>
+                       
+                            </a>
+                        </li>
+                        <li class="header-menu">
+                            <span>Extra</span>
+                        </li>
+                      
+                   
+						 <li>
+                            <a href="/logout">
+                                <i class="fa fa-sign-out-alt"></i>
+                                <span class="menu-text">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- sidebar-menu  -->
+            </div>
+          
+        </nav>
+        	 <div id = "navbar"><h1>Admin Page - Add a new Doctor
+   </h1></div>
+<div id="box1">
+ <a href = "/getAllDoctors" class="btn btn-info btn1 nonactive ">Doctors Information</a>
+	<a th:href ="@{/goToAddDoctorForm}" class="btn btn-info btn1 ">Add New Doctor</a>
+<form method="POST"th:action="@{/editDoctor}" class="text-center border border-light p-5" 
+			th:object="${doctor}">
+		
+			
+			<input type = "text" th:field="${doctor.doctor_id}" id="defaultContactFormName" class="form-control mb-4" placeholder="Id"/>
+			
+			<input type = "text" th:field="${doctor.doctor_name}"  class="form-control mb-4" placeholder="First Name"/>
+			<input type = "text" th:field="${doctor.doctor_lastName}"  class="form-control mb-4" placeholder="LastName"/>
+			
+			 <select  th:field="${doctor.departament.departament_id}"  id="dropOperator" class="browser-default custom-select mb-4" searchable="Search here..">
+           <option value="0">Choose a new Department</option>
+          <option th:each="dep : ${departaments}" th:value="${dep.departament_id}" th:text="${dep.departament_name}"></option>
+         </select>
+         
+			
+			 <select  th:field="${doctor.doctor_gender.id}"  id="dropOperator" class="browser-default custom-select mb-4" searchable="Search here..">
+           <option value="0">Choose Gender</option>
+          <option th:each="g : ${genders}" th:value="${g.id}" th:text="${g.gender}"></option>
+         </select>
+         
+			 <select  th:field="${doctor.specialisation.id}"  id="dropOperator" class="browser-default custom-select mb-4" searchable="Search here..">
+           <option value="0">Choose Specialization</option>
+          <option th:each="s : ${specialisations}" th:value="${s.id}" th:text="${s.specialisation}"></option>
+         </select>
+			<input type = "text" th:field="${doctor.phoneNumber}" class="form-control mb-4" placeholder="Phone Number"/>
+			<input type = "date" th:field="${doctor.hireDate}" class="form-control mb-4" placeholder="Hire Date"/>
+			<input type = "text" th:field="${doctor.email}" class="form-control mb-4" placeholder="E-mail"/>
+			<button type="submit" value="Add Job" class="btn btn-info btn-block">Add Doctor</button>
+</form>
+
+	</div>
+	</div>
+
+</body>
+</html>

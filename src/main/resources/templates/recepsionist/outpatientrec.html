@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"> 
+<head>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <title>Hospital Management</title>
+
+    <!-- using online links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../side-bar.css">
+	<link rel="stylesheet" href="../side-bar.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+	<script type="text/javascript" src="new.js"></script>
+
+</head>
+<style>
+        #navbar{
+    top:0%;
+	left:15%;
+    background-color: #02BFCD;
+    width:85%;
+    height:10%;
+   position:fixed;
+   z-index: 1;
+   overflow:visible;
+    color:white;
+    font-family: Geneva;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 12%;
+    font-size:20px; 
+    padding:0.5%;
+}
+#box1{
+margin-top:5%;
+margin-left:17%;
+width:84%;
+height:100%;
+padding:2%;
+}
+td{
+white-space: nowrap;
+overflow: scroll;
+
+}
+.btn1{
+width:540px;
+}
+​.btn-info{
+  display: inline-block;
+   background-color: #02BFCD;
+}
+                                                                                                         
+.a1:hover, .a1:active {
+  background-color: red;
+    text-decoration: none;
+}
+.nonactive{
+background-color:white;
+color:#02BFCD;'
+}
+</style>
+<body>
+
+<div>
+ <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
+ <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <!-- sidebar-brand  -->
+                <div class="sidebar-item sidebar-brand">
+                    <a href="#">Recepsionist Bar</a>
+                </div>
+                <!-- sidebar-header  -->
+                <div class="sidebar-item sidebar-header d-flex flex-nowrap">
+                    <div class="user-pic">
+                        <img class="img-responsive img-rounded" src="img/user.jpg" alt="User picture">
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Recepsionist
+                            <strong>Panel</strong>
+                        </span>
+                        <span class="user-role">Recepsionist</span>
+                        <span class="user-status">
+                            <i class="fa fa-circle"></i>
+                            <span>Online</span>
+                        </span>
+                    </div>
+                </div>
+                <!-- sidebar-search  -->
+                <div class="sidebar-item sidebar-search">
+                    <div>
+                        <div class="input-group">
+                            <input type="text" class="form-control search-menu" placeholder="Search...">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- sidebar-menu  -->
+                <div class=" sidebar-item sidebar-menu">
+                    <ul>
+                        <li class="header-menu">
+                            <span>General</span>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="recepsionistPage.html">
+                                <i class="fa fa-tachometer-alt"></i>
+                                <span class="menu-text">Dashboard</span>
+                       
+                            </a>
+                        
+                        </li>
+
+                     
+                        <li class="sidebar-dropdown">
+                            <a href="/getAllInDoorPatientRec">
+                               <i class="fa fa-procedures"></i>
+                                <span class="menu-text">In Patient</span>
+                            </a>
+                            
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="/getAllOutDoorPatientRec">
+                            <i class="fa fa-user-injured"></i>
+                                <span class="menu-text">OutPatient</span>
+                            </a>
+                           
+                        </li>
+					
+						  <li>
+                            <a href="/getAllAppointmentsRec">
+                                <i class="fa fa-calendar"></i>
+                               <span class="menu-text">Appointments</span>
+                       
+                            </a>
+                        </li>
+						
+						      <li class="sidebar-dropdown">
+                            <a href="/getAllPatientTestRec">
+                                <i class="fa fa-user-nurse"></i>
+                                <span class="menu-text">Patient Test</span>
+                            </a>
+                            
+                        </li>
+                          <li>
+                            <a href="/getAllRoomsRec">
+                                <i class="fa fa-calendar"></i>
+                               <span class="menu-text">Rooms</span>
+                       
+                            </a>
+                        </li>
+                        <li class="header-menu">
+                            <span>Extra</span>
+                        </li>
+                      
+                   
+						 <li>
+                            <a href="/logout">
+                                <i class="fa fa-sign-out-alt"></i>
+                                <span class="menu-text">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- sidebar-menu  -->
+            </div>
+          
+        </nav>
+        <!-- page-content" -->
+		 <div id = "navbar"><h1> Add new Patient
+   </h1></div>
+	
+<div id="box1">
+<a href = "/getAllOutDoorPatientRec" class="btn btn-info btn1">Patients OutDoor Information</a>
+	<a th:href ="@{/goToAddOutPatientFormRec}" class="btn btn-info btn1 nonactive">Add New OutDoor Patient</a>
+		<div class = "alert alert-success" style = "color:green;text-align:center;" role = "alert" th:if="${param.success}">
+		New patient was added successfully!
+		</div>
+		<div class = "alert alert-success" style = "color:green;text-align:center;" role = "alert" th:if="${param.edit}">
+		Patient was edit successfully!
+		</div>
+		<div class = "alert alert-success" style = "color:green;text-align:center;" role = "alert" th:if="${param.delete}">
+		Patient was deleted successfully!
+		</div>
+		<table class="table table-striped">
+		<thead>
+				<tr >
+				<th scope = "col">PATIENT ID</th>
+				<th scope = "col">PATIENT NAME</th>
+			    <th scope = "col">PATIENT LASTNAME</th>
+			    <th scope = "col">GENDER</th>
+			    <th scope = "col">BIRTHDAY</th>
+			    <th scope = "col">ADDRESS</th>
+			    <th scope = "col">CITY</th>
+			    <th scope = "col">DIAGNOSE</th>
+			    <th scope = "col">DOCTOR</th>
+		
+			    <th scope = "col">DELETE</th>
+			   
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="pat : ${patients}" scope = "row">
+				<td th:text="${pat.pacient_id}"></td>
+				<td th:text="${pat.pacient_firstName}"></td>
+				<td th:text="${pat.pacient_lastName}"></td>
+				<td th:text="${pat.pacient_gender.gender}"></td>
+				<td th:text="${pat.pacient_birthday}"></td>
+				<td th:text="${pat.pacient_address}"></td>
+				<td th:text="${pat.pacient_city}"></td>
+				<td th:text="${pat.pacient_diagnose}"></td>
+					<td th:text="${pat.doctor.doctor_name}"></td>
+			
+			
+			    	<td>  <a th:href="@{deletePatientRecO/__${pat.pacient_id}__}"  onclick="return confirm('Are you sure you want to delete this patient?');"><i
+							class=" fa fa-trash"></i>Delete Patient</a></td>
+					
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+</div>
+	</div>
+
+</body>
+</html>

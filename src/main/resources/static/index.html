@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            
+        </title>
+    </head>
+    <style>
+        body{
+            
+            background-image: url('img/t.jpg');
+            height: 100%; 
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+        }
+        #navbar{
+    top:7%;
+    background-color: #02BFCD;
+    width:100%;
+    height:12%;
+   position:fixed;
+   z-index: 1;
+   overflow:visible;
+    color:white;
+    font-family: Geneva;
+    opacity: 50%;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 12%;
+    font-size:25px; 
+    padding:0.5%;
+}
+
+#img{
+    border-radius: 50%;
+    width:30%;
+    height:45%;
+}
+#d{
+    margin-top:2%;
+    float:left;
+    margin-left:1%;
+    width:30%;
+    height:45%;
+    text-align: center;
+    box-shadow: black;
+   
+}
+#h{
+    color:#02BFCD;
+    background-color: white;
+    padding:5px;
+    width:10%;
+    height:5%;
+    margin-top:15%;
+    margin-left:42%;
+
+}
+#d:hover{
+    width:30.5%;
+    height:45.5%;
+    color:rgb(9, 172, 184);
+    background-color: transparent;
+}
+#h1{
+    color:#02BFCD;
+    background-color: white;
+    padding:5px;
+    width:60%;
+    margin-left: 15%;
+}
+    </style>
+    <body>
+   <div id = "navbar"><h1>Hospital Management System
+   </h1></div>
+   <h1 id = "h">Login as</h1>
+   <a href = "login" th:href="@{/login}">Register Now</a>
+   <div id = "d"><img id ="img" src = "img/doc2.jpg"><h1 id = "h1">Doctor</h1><a href = "login.html" >klik</a></div>
+   <div id = "d"><img id ="img"  src = "img/rec3.jpg"><h1 id = "h1">Recepsionist</h1></div>
+   <div id = "d"><img id ="img" src = "img/doc2.jpg"><h1 id = "h1">Admin</h1></div>
+    </body>
+</html>

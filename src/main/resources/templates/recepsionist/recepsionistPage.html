@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8" />
+<title>Hospital Management </title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+  
+        
+           <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="side-bar.css">
+	<link rel="stylesheet" href="side-bar.css">
+    
+</head>
+<style>
+        #navbar{
+    top:0%;
+	left:15%;
+    background-color: #02BFCD;
+    width:85%;
+    height:10%;
+   position:fixed;
+   z-index: 1;
+   overflow:visible;
+    color:white;
+    font-family: Geneva;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 12%;
+    font-size:20px; 
+    padding:0.5%;
+}
+#box1{
+margin-top:4%;
+margin-left:17%;
+width:84%;
+height:100%;
+padding:2%;
+}
+td{
+white-space: nowrap;
+overflow: scroll;
+
+}
+.btn1{
+width:630px;
+}
+​.btn-info{
+  display: inline-block;
+   background-color: #02BFCD;
+}
+.dropdown-primary{
+ background-color: #02BFCD;
+}
+.nonactive{
+background-color:white;
+color:#02BFCD;'
+}
+                                                                                                         
+.a1:hover, .a1:active {
+  background-color: red;
+    text-decoration: none;
+}
+.s{
+
+  color: #02BFCD;
+  font-size:30px;
+  display:block;
+  font-family:'Josefin Sans';
+
+  text-decoration:none;
+}
+</style>
+<body>
+ <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
+ <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <!-- sidebar-brand  -->
+                <div class="sidebar-item sidebar-brand">
+                    <a href="#">Recepsionist Bar</a>
+                </div>
+                <!-- sidebar-header  -->
+                <div class="sidebar-item sidebar-header d-flex flex-nowrap">
+                    <div class="user-pic">
+                        <img class="img-responsive img-rounded" src="img/user.jpg" alt="User picture">
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Recepsionist
+                            <strong>Panel</strong>
+                        </span>
+                        <span class="user-role">Recepsionist</span>
+                        <span class="user-status">
+                            <i class="fa fa-circle"></i>
+                            <span>Online</span>
+                        </span>
+                    </div>
+                </div>
+                <!-- sidebar-search  -->
+                <div class="sidebar-item sidebar-search">
+                    <div>
+                        <div class="input-group">
+                            <input type="text" class="form-control search-menu" placeholder="Search...">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- sidebar-menu  -->
+                <div class=" sidebar-item sidebar-menu">
+                    <ul>
+                        <li class="header-menu">
+                            <span>General</span>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="recepsionistPage.html">
+                                <i class="fa fa-tachometer-alt"></i>
+                                <span class="menu-text">Dashboard</span>
+                       
+                            </a>
+                        
+                        </li>
+
+                     
+                        <li class="sidebar-dropdown">
+                            <a href="/getAllInDoorPatientRec">
+                               <i class="fa fa-procedures"></i>
+                                <span class="menu-text">In Patient</span>
+                            </a>
+                            
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="/getAllOutDoorPatientRec">
+                            <i class="fa fa-user-injured"></i>
+                                <span class="menu-text">OutPatient</span>
+                            </a>
+                           
+                        </li>
+					
+						  <li>
+                            <a href="/getAllAppointmentsRec">
+                                <i class="fa fa-calendar"></i>
+                               <span class="menu-text">Appointments</span>
+                       
+                            </a>
+                        </li>
+						
+						      <li class="sidebar-dropdown">
+                            <a href="/getAllPatientTestRec">
+                                <i class="fa fa-user-nurse"></i>
+                                <span class="menu-text">Patient Test</span>
+                            </a>
+                            
+                        </li>
+                          <li>
+                            <a href="/getAllRoomsRec">
+                                <i class="fa fa-calendar"></i>
+                               <span class="menu-text">Rooms</span>
+                       
+                            </a>
+                        </li>
+                        <li class="header-menu">
+                            <span>Extra</span>
+                        </li>
+                      
+                   
+						 <li>
+                            <a href="/logout">
+                                <i class="fa fa-sign-out-alt"></i>
+                                <span class="menu-text">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- sidebar-menu  -->
+            </div>
+          
+        </nav>
+        	 <div id = "navbar"><h1>Recepsionist - Dashboard
+   </h1></div>
+<div id="box1">    
+<ul>   <li style = "display:inline-block;">        
+ <a href="/getAllRooms">
+                                <i class="fa fa-bed" style = "font-size:120px;
+	                                                           margin-top:40px;
+	                                                           margin-left:60px;
+	                                                           color: #02BFCD;
+	                                                           display: inline-block;"></i><span class ="s" style = "margin-left:95px;">Room</span></a></li>
+	                                                           <li style=display:inline-block;>
+	                           <a href="/getAllInDoorPatientRec">
+                                <i class="fa fa-procedures" style = "font-size:120px;
+	                                                           margin-top:40px;
+	                                                           margin-left:200px;
+	                                                           padding-bottom:20px;
+	                                                           color: #02BFCD;
+	                                                           display: inline-block;"></i><span class ="s" style = "margin-left:190px;">Indoor Patient</span></a></li>
+	                                                           
+	                                                             <li style=display:inline-block;>
+	                           <a href="/getAllOutDoorPatientRec">
+                                <i class="fa fa-user-injured" style = "font-size:120px;
+	                                                           margin-top:40px;
+	                                                           margin-left:200px;
+	                                                           padding-bottom:20px;
+	                                                           color: #02BFCD;
+	                                                           display: inline-block;"></i><span class ="s" style = "margin-left:155px;">Outdoor Patient</span></a></li>
+	                     
+	                     
+	    </ul>          
+	    
+	    
+	    <ul>   <li style = "display:inline-block;">        
+ <a href="/getAllAppointments">
+                                <i class="fa fa-calendar" style = "font-size:120px;
+	                                                           margin-top:40px;
+	                                                           margin-left:270px;
+	                                                           color: #02BFCD;
+	                                                           display: inline-block;"></i><span class ="s" style = "margin-left:230px;">Appointments</span></a></li>
+	                                                           <li style=display:inline-block;>
+	                           <a href="/getAllPatientTest">
+                                <i class="fa fa-vials" style = "font-size:120px;
+	                                                           margin-top:40px;
+	                                                           margin-left:250px;
+	                                                           padding-bottom:20px;
+	                                                           color: #02BFCD;
+	                                                           display: inline-block;"></i><span class ="s" style = "margin-left:260px;">Patient Test</span></a></li>
+	                                                           
+	
+	                     
+	                     
+	    </ul>            
+	</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"> 
+<head>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Responsive sidebar template with sliding effect and dropdown menu based on bootstrap 3">
+    <title>Hospital Mangement - Rooms</title>
+
+    <!-- using online links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+
+    <!-- using local links -->
+    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"> -->
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="side-bar.css">
+	<link rel="stylesheet" href="side-bar.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+	<script type="text/javascript" src="new.js"></script>
+
+</head>
+<style>
+        #navbar{
+    top:0%;
+	left:15%;
+    background-color: #02BFCD;
+    width:85%;
+    height:10%;
+   position:fixed;
+   z-index: 1;
+   overflow:visible;
+    color:white;
+    font-family: Geneva;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 12%;
+    font-size:20px; 
+    padding:0.5%;
+}
+#box1{
+margin-top:5%;
+margin-left:17%;
+width:84%;
+height:100%;
+padding:2%;
+}
+td{
+white-space: nowrap;
+overflow: scroll;
+
+}
+.btn1{
+width:49%;
+}
+​.btn-info{
+  display: inline-block;
+   background-color: #02BFCD;
+}
+                                                                                                         
+.a1:hover, .a1:active {
+  background-color: red;
+    text-decoration: none;
+}
+.nonactive{
+background-color:white;
+color:#02BFCD;'
+}
+</style>
+<body>
+
+<div>
+ <div class="page-wrapper default-theme sidebar-bg bg1 toggled">
+        <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <!-- sidebar-brand  -->
+                <div class="sidebar-item sidebar-brand">
+                    <a href="#">Admin Bar</a>
+                </div>
+                <!-- sidebar-header  -->
+                <div class="sidebar-item sidebar-header d-flex flex-nowrap">
+                    <div class="user-pic">
+                        <img class="img-responsive img-rounded" src="img/user.jpg" alt="User picture">
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">Admin
+                            <strong>Panel</strong>
+                        </span>
+                        <span class="user-role">Administrator</span>
+                        <span class="user-status">
+                            <i class="fa fa-circle"></i>
+                            <span>Online</span>
+                        </span>
+                    </div>
+                </div>
+                <!-- sidebar-search  -->
+                <div class="sidebar-item sidebar-search">
+                    <div>
+                        <div class="input-group">
+                            <input type="text" class="form-control search-menu" placeholder="Search...">
+                            <div class="input-group-append">
+                                <span class="input-group-text">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- sidebar-menu  -->
+                <div class=" sidebar-item sidebar-menu">
+                    <ul>
+                        <li class="header-menu">
+                            <span>General</span>
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="adminPage.html">
+                                <i class="fa fa-tachometer-alt"></i>
+                                <span class="menu-text">Dashboard</span>
+                       
+                            </a>
+                        
+                        </li>
+                                               <li class="sidebar-dropdown">
+                            <a href = "/getAllDoctors">
+                                <i class="fa fa-user-md"></i>Doctor</a>
+                     
+                        </li>
+       <li class="sidebar-dropdown">
+                            <a href="/getAllLaborant">
+                                <i class="fas fa-flask"></i>
+                                <span class="menu-text">Laborant</span>
+                            </a>
+                            
+                        </li>
+                            <li class="sidebar-dropdown">
+                            <a href="/getAllLaborator">
+                                <i class="fa fa-vials"></i>
+                                <span class="menu-text">Laborator</span>
+                            </a>
+                            
+                        </li>
+                          <li class="sidebar-dropdown">
+                            <a href="/getAllNurse">
+                                <i class="fa fa-user-nurse"></i>
+                                <span class="menu-text">Nurse</span>
+                            </a>
+                            
+                        </li>
+                        
+                        
+                          <li class="sidebar-dropdown">
+                            <a href="/getAllTest">
+                                <i class="fa fa-list"></i>
+                                <span class="menu-text">Test</span>
+                            </a>
+                            
+                        </li>
+                        
+                            <li class="sidebar-dropdown">
+                            <a href="/getAllPatientTest">
+                                <i class="fas fa-vial"></i>
+                                <span class="menu-text">Patient Test</span>
+                            </a>
+                            
+                        </li>
+
+<li class="sidebar-dropdown">
+                            <a href="/getAllRecepsionist">
+                               <i class="fa fa-concierge-bell"></i>
+                                <span class="menu-text">Recepsionist</span>
+                            </a>
+                           
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="/getAllInDoorPatient">
+                               <i class="fa fa-procedures"></i>
+                                <span class="menu-text">In Patient</span>
+                            </a>
+                           
+                        </li>
+                        <li class="sidebar-dropdown">
+                            <a href="/getAllOutDoorPatient">
+                            <i class="fa fa-user-injured"></i>
+                                <span class="menu-text">OutPatient</span>
+                            </a>
+                           
+                        </li>
+<li class="sidebar-dropdown">
+                            <a href="/getAllMedication">
+                            <i class="fa fa-prescription-bottle-alt"></i>
+                                <span class="menu-text">Medicines</span>
+                            </a>
+                           
+                        </li>
+ <li>
+                            <a href="/getAllAppointments">
+                                <i class="fa fa-calendar"></i>
+                               <span class="menu-text">Appointments</span>
+                       
+                            </a>
+                        </li>
+
+
+                       
+                          <li>
+                            <a href="/getAllDepartaments">
+                                <i class="fa fa-building"></i>
+                               <span class="menu-text">Departaments</span>
+                       
+                            </a>
+                        </li>
+                          <li>
+                            <a href="/getAllRooms">
+                                <i class="fa fa-bed"></i>
+                               <span class="menu-text">Rooms</span>
+                       
+                            </a>
+                        </li>
+                        <li class="header-menu">
+                            <span>Extra</span>
+                        </li>
+                      
+                   
+						 <li>
+                            <a href="/logout">
+                                <i class="fa fa-sign-out-alt"></i>
+                                <span class="menu-text">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- sidebar-menu  -->
+            </div>
+          
+        </nav>
+        <!-- page-content" -->
+		 <div id = "navbar"><h1>Admin Page - Room Information
+   </h1></div>
+	
+<div id="box1">
+  <a href = "/getAllRooms" class="btn btn-info btn1 nonactive">Room Information</a>
+	<a th:href ="@{/goToAddRoomForm}" class="btn btn-info btn1 ">Add New Room</a>
+<form method="POST" th:action="@{/addRoomForm}" class="text-center border border-light p-5" 
+			th:object="${room}">
+			<input type = "number" th:field="${room.room_number}" placeholder = "Room Number" class="form-control mb-4" required/>
+			<input type = "number" th:field="${room.room_floor}" placeholder = "Room Floor" class="form-control mb-4" required/>
+			<input type = "number" th:field="${room.room_capacity}" placeholder = "Room Capacity" class="form-control mb-4" required/>
+			
+			<button type="submit" value="Add Job" class="btn btn-info btn-block">Add Room</button>
+</form>
+
+	</div>
+</div>
+</div>
+</body>
+</html>
